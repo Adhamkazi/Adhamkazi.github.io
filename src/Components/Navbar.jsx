@@ -1,4 +1,4 @@
-import img1 from "../Images/myImage.jpg"
+import img1 from "../Images/Logo.jpg"
 
 import {
     Text, Box, Flex, Avatar, HStack, IconButton, Button, Menu, MenuButton, useDisclosure, useColorModeValue, Stack,
@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <>
-            <Box boxShadow='lg' p='2' bg={useColorModeValue('#1A202C', '#1A202C')} px={4} position="fixed" backdropFilter="saturate(180%) blur(5px)"
+            <Box boxShadow='lg' p='2' bg={useColorModeValue('#1A202C', '#1A202C')} px={4} position="fixed" zIndex={"10"}
                 w="100%">
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'} >
                     <IconButton size={'md'} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={'Open Menu'} display={{ md: 'none' }} onClick={isOpen ? onClose : onOpen} />
@@ -24,8 +24,8 @@ const Navbar = () => {
                         <HStack as={'nav'} spacing={10} display={{ base: 'none', md: 'flex' }} cursor="pointer">
                             <Text fontFamily={"serif"} fontSize={{ base: "15px", sm: "15px", md: "19px" }} color="darkgrey" _hover={{ fontWeight: 'semibold', color: "#63B3ED", textDecoration: "underline" }}><Link activeClass="active" to="home" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></Text>
                             <Text fontFamily={"serif"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey" _hover={{ fontWeight: 'semibold', color: "#63B3ED", textDecoration: "underline" }}><Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={500}>About</Link></Text>
-                            <Text fontFamily={"serif"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey" _hover={{ fontWeight: 'semibold', color: "#63B3ED", textDecoration: "underline" }}><Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={500}>Projects</Link></Text>
                             <Text fontFamily={"serif"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey" _hover={{ fontWeight: 'semibold', color: "#63B3ED", textDecoration: "underline" }}><Link activeClass="active" to="skills" spy={true} smooth={true} offset={-70} duration={500}>Skills</Link></Text>
+                            <Text fontFamily={"serif"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey" _hover={{ fontWeight: 'semibold', color: "#63B3ED", textDecoration: "underline" }}><Link activeClass="active" to="project" spy={true} smooth={true} offset={-70} duration={500}>Projects</Link></Text>
                             <Text fontFamily={"serif"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey" _hover={{ fontWeight: 'semibold', color: "#63B3ED", textDecoration: "underline" }}><Link activeClass="active" to="contact" spy={true} smooth={true} offset={-70} duration={500}>Contact</Link></Text>
                         </HStack>
                     </HStack>
@@ -49,7 +49,7 @@ const Navbar = () => {
                             <Text fontFamily={"monospace"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey"><Link activeClass="active" to="home" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></Text>
                             <Text fontFamily={"monospace"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey"><Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={500}>About</Link></Text>
                             <Text fontFamily={"monospace"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey"><Link activeClass="active" to="skills" spy={true} smooth={true} offset={-70} duration={500}>Skills</Link></Text>
-                            <Text fontFamily={"monospace"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey"><Link activeClass="active" to="projects" spy={true} smooth={true} offset={-70} duration={500}>Projects</Link></Text>
+                            <Text fontFamily={"monospace"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey"><Link activeClass="active" to="project" spy={true} smooth={true} offset={-70} duration={500}>Projects</Link></Text>
                             <Text fontFamily={"monospace"} fontSize={{ base: "15px", sm: "15px", md: "18px" }} color="darkgrey"><Link activeClass="active" to="contact" spy={true} smooth={true} offset={-70} duration={500}>Contact</Link></Text>
                         </Stack>
                     </Box>

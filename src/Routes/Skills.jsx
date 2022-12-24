@@ -16,6 +16,7 @@ import express from "../Images/express.png"
 import nodejs from "../Images/nodejs.png"
 import typescript from "../Images/typescript.png"
 import npm from "../Images/NPM.png"
+import mongodb from "../Images/Mongodb.png"
 
 const Skills = () => {
     return (
@@ -82,6 +83,12 @@ const Skills = () => {
                     <Image src={express} w="100%" />
                     <Button mt="20px" w="70px" h="30px" fontSize={'sm'} rounded={'md'} bg={'#1A202C'} color={'white'} boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'} _hover={{ bg: 'blue.500', }} _focus={{ bg: 'blue.500', }}>
                         Express
+                    </Button>
+                </Box>
+                <Box boxShadow='2xl' p='6' rounded='md' bg='#1A202C' w="80%">
+                    <Image src={mongodb} w="100%" />
+                    <Button mt="20px" w="70px" h="30px" fontSize={'sm'} rounded={'md'} bg={'#1A202C'} color={'white'} boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'} _hover={{ bg: 'blue.500', }} _focus={{ bg: 'blue.500', }}>
+                        MongoDb
                     </Button>
                 </Box>
                 <Box boxShadow='2xl' p='6' rounded='md' bg='#1A202C' w="80%">

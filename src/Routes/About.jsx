@@ -4,7 +4,7 @@ import img3 from "../Images/developer.jpg"
 
 const About = () => {
     return (
-        <Container maxW={'7xl'} p="12" mt="50px" id='about'>
+        <Container maxW={'7xl'} p="12" mt="10px" id='about'>
             <Heading as="h1" color={"gray.300"} fontFamily="monospace" textDecoration={"underline"}>About</Heading>
             <SimpleGrid marginTop={{ base: '1', sm: '5' }} columns={{ base: 1, sm: 1, md: 2 }} justifyContent="space-between">
                 <Box display="flex" flex="1" marginRight="3" position="relative" alignItems="center">
@@ -25,7 +25,7 @@ const About = () => {
 
                     columns={{ base: 1, sm: 1, md: 1 }}
                     justifyContent="center"
-                    marginTop={{ base: '3', sm: '0', md: "100px" }}>
+                    marginTop={{ base: '0px', sm: '0px', md: "80px" }}>
                     <Text as="p" marginTop="2" color={useColorModeValue('gray.300', 'gray.200')} fontSize="lg">
                         I am  full-stack web developer, passionate about developing user-friendly web applications using MERN Stack.
                     </Text>

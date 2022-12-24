@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import {
     Container,
     Flex,
@@ -25,23 +26,39 @@ import {
     MdOutlineEmail,
 } from 'react-icons/md';
 import { BsGithub, BsLinkedin, BsPerson } from 'react-icons/bs';
-import { useState } from "react"
+// import { useState } from "react"
+// import Alert from "./Alert";
 
 const Contact = () => {
-    const [name, setName] = useState("")
-    const [mail, setMail] = useState("")
-    const [message, setMessage] = useState("")
 
-    const handleName = (e) => {
-        setName(e.target.value)
+    const {
+        handleSubmit,
+        register,
+        formState: { errors, isSubmitting }
+    } = useForm();
+
+    function onSubmit({ values }) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                alert("THANKS FOR CONNECTING");
+                resolve();
+            }, 1000);
+        });
     }
-    const handleMail = (e) => {
-        setMail(e.target.value)
-    }
-    const handleMessage = (e) => {
-        setMessage(e.target.value)
-    }
-    // console.log(name)
+    // const [name, setName] = useState("")
+    // const [mail, setMail] = useState("")
+    // const [message, setMessage] = useState("")
+
+    // const handleName = (e) => {
+    //     setName(e.target.value)
+    // }
+    // const handleMail = (e) => {
+    //     setMail(e.target.value)
+    // }
+    // const handleMessage = (e) => {
+    //     setMessage(e.target.value)
+    // }
+
     return (
         <Container bg="#1A202C" maxW="full" mt={10} centerContent overflow="hidden" id='contact'>
             <Flex>
@@ -131,55 +148,71 @@ const Contact = () => {
                             </WrapItem>
                             <WrapItem>
                                 <Box bg="#1A202C" borderRadius="lg">
-                                    <Box m={8} color="white">
-                                        <VStack spacing={5}>
-                                            <FormControl id="name">
-                                                <FormLabel>Your Name</FormLabel>
-                                                <InputGroup borderColor="#E0E1E7" _hover={{
-                                                    borderRadius: 'gray.300',
-                                                }}>
-                                                    <InputLeftElement
-                                                        pointerEvents="none"
-                                                        children={<BsPerson color="gray.800" />}
-                                                    />
-                                                    <Input type="text" size="md" color={"white"} value={name} onChange={handleName} />
-                                                </InputGroup>
-                                            </FormControl>
-                                            <FormControl id="email">
-                                                <FormLabel>Mail</FormLabel>
-                                                <InputGroup borderColor="#E0E1E7" _hover={{
-                                                    borderRadius: 'gray.300',
-                                                }}>
-                                                    <InputLeftElement
-                                                        pointerEvents="none"
-                                                        children={<MdOutlineEmail color="gray.800" />}
-                                                    />
-                                                    <Input type="text" size="md" value={mail} onChange={handleMail} />
-                                                </InputGroup>
-                                            </FormControl>
-                                            <FormControl id="message">
-                                                <FormLabel>Message</FormLabel>
-                                                <Textarea
-                                                    borderColor="gray.300"
-                                                    _hover={{
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <Box m={8} color="white">
+                                            <VStack spacing={5}>
+                                                <FormControl id="name" isInvalid={errors.name}>
+                                                    <FormLabel>Your Name</FormLabel>
+                                                    <InputGroup borderColor="#E0E1E7" _hover={{
                                                         borderRadius: 'gray.300',
-                                                    }}
-                                                    placeholder="message"
-                                                    value={message}
-                                                    onChange={handleMessage}
-                                                />
-                                            </FormControl>
-                                            <FormControl id="name" float="right">
-                                                <Button
-                                                    variant="solid"
-                                                    bg="#0D74FF"
-                                                    color="white"
-                                                    _hover={{}}>
-                                                    Let's Conect
-                                                </Button>
-                                            </FormControl>
-                                        </VStack>
-                                    </Box>
+                                                    }}>
+                                                        <InputLeftElement
+                                                            pointerEvents="none"
+                                                            children={<BsPerson color="gray.800" />}
+                                                        />
+                                                        <Input type="text" size="md" color={"white"} id="name"
+                                                            placeholder="name"
+                                                            {...register("name", {
+                                                                required: "This is required",
+                                                                minLength: { value: 4, message: "Minimum length should be 4" }
+                                                            })}
+                                                        />
+                                                    </InputGroup>
+                                                </FormControl>
+                                                <FormControl id="email">
+                                                    <FormLabel>Mail</FormLabel>
+                                                    <InputGroup borderColor="#E0E1E7" _hover={{
+                                                        borderRadius: 'gray.300',
+                                                    }}>
+                                                        <InputLeftElement
+                                                            pointerEvents="none"
+                                                            children={<MdOutlineEmail color="gray.800" />}
+                                                        />
+                                                        <Input type="text" size="md" placeholder="email"
+                                                            {...register("Email", {
+                                                                required: "This is required",
+                                                                minLength: { value: 4, message: "Minimum length should be 4" }
+                                                            })} />
+                                                    </InputGroup>
+                                                </FormControl>
+                                                <FormControl id="message">
+                                                    <FormLabel>Message</FormLabel>
+                                                    <Textarea
+                                                        borderColor="gray.300"
+                                                        _hover={{
+                                                            borderRadius: 'gray.300',
+                                                        }}
+                                                        placeholder="message"
+                                                        // placeholder="name"
+                                                        {...register("message", {
+                                                            required: "This is required",
+                                                            minLength: { value: 4, message: "Minimum length should be 4" }
+                                                        })}
+                                                    />
+                                                </FormControl>
+                                                <FormControl id="name" float="right">
+                                                    <Button
+                                                        colorScheme="teal" isLoading={isSubmitting} type="submit"
+                                                        variant="solid"
+                                                        bg="#0D74FF"
+                                                        color="white"
+                                                        _hover={{}}>
+                                                        Let's Conect
+                                                    </Button>
+                                                </FormControl>
+                                            </VStack>
+                                        </Box>
+                                    </form>
                                 </Box>
                             </WrapItem>
                         </Wrap>
@@ -191,3 +224,4 @@ const Contact = () => {
 }
 
 export { Contact }
+
