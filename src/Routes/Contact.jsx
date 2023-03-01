@@ -26,8 +26,6 @@ import {
     MdOutlineEmail,
 } from 'react-icons/md';
 import { BsGithub, BsLinkedin, BsPerson } from 'react-icons/bs';
-// import { useState } from "react"
-// import Alert from "./Alert";
 
 const Contact = () => {
 
@@ -220,6 +218,7 @@ const Contact = () => {
                 </Box>
             </Flex>
         </Container>
+
     );
 }
 
