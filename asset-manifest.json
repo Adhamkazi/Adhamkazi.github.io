@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c0c8b160.css",
-    "main.js": "/static/js/main.467fc47f.js",
+    "main.js": "/static/js/main.a49384d0.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/astronaut-in-tea-break.gif": "/static/media/astronaut-in-tea-break.4cc55bd346d867edb113.gif",
     "static/media/hotstar.png": "/static/media/hotstar.474e93780ce83d2bd553.png",
@@ -21,11 +21,11 @@
     "static/media/redux.png": "/static/media/redux.640c14be8fa8ebc01dfa.png",
     "index.html": "/index.html",
     "main.c0c8b160.css.map": "/static/css/main.c0c8b160.css.map",
-    "main.467fc47f.js.map": "/static/js/main.467fc47f.js.map",
+    "main.a49384d0.js.map": "/static/js/main.a49384d0.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c0c8b160.css",
-    "static/js/main.467fc47f.js"
+    "static/js/main.a49384d0.js"
   ]
 }
